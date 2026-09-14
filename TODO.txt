@@ -1,0 +1,5 @@
+cd pr1
+python pr1.py
+
+cd lr1
+python lr1.py
