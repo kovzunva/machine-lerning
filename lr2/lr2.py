@@ -1,85 +1,79 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import seaborn as sns
 import warnings
+warnings.filterwarnings('ignore')
 
+from sklearn.datasets import load_breast_cancer
 from sklearn.model_selection import train_test_split, StratifiedKFold, cross_validate
 from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler
+from sklearn.preprocessing import StandardScaler
 from sklearn.dummy import DummyClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import (
-    accuracy_score, precision_score, recall_score, f1_score, roc_auc_score,
-    confusion_matrix, ConfusionMatrixDisplay, roc_curve
+    make_scorer, accuracy_score, precision_score, recall_score, f1_score,
+    roc_auc_score, confusion_matrix, ConfusionMatrixDisplay, roc_curve
 )
 
-warnings.filterwarnings('ignore')
+# 1. Завантаження набору даних (Варіант 6)
+data = load_breast_cancer(as_frame=True)
+X = data.data.copy()
+y_original = data.target.copy()
 
-# 1. Завантаження даних
-url = "https://archive.ics.uci.edu/ml/machine-learning-databases/car/car.data"
-columns = ['buying', 'maint', 'doors', 'persons', 'lug_boot', 'safety', 'class']
+# За замовчуванням у scikit-learn: 0 - malignant, 1 - benign.
+# Для медичної задачі позитивним класом (y=1) робимо malignant (злоякісна пухлина):
+y = 1 - y_original
 
-try:
-    df = pd.read_csv(url, names=columns)
-except Exception:
-    df = pd.read_csv('car.data', names=columns)
+print(f"Розмір набору даних: {X.shape}")
+print(f"Пропущені значення: {X.isnull().sum().sum()}")
+print(f"Дублікати: {X.duplicated().sum()}")
+print("\nРозподіл класів (0 - Benign, 1 - Malignant):")
+print(y.value_counts().sort_index())
+print(f"Частка позитивного класу (Malignant): {y.mean():.4f}")
 
-# 2. Формування бінарної цільової змінної: 0 - unacc, 1 - acc/good/vgood
-df['target'] = df['class'].apply(lambda x: 0 if x == 'unacc' else 1)
+# Графік розподілу класів (діагностика)
+plt.figure(figsize=(6, 4))
+plt.bar(['Benign (0)', 'Malignant (1)'], y.value_counts().sort_index(), color=['#2b5c8f', '#d95f02'], edgecolor='black')
+plt.ylabel('Кількість спостережень')
+plt.title('Розподіл об\'єктів за класами')
+plt.grid(axis='y', alpha=0.3)
+plt.tight_layout()
+plt.savefig('class_distribution_lr2.png')
+plt.close()
 
-print("Розподіл бінарних класів:")
-print(df['target'].value_counts())
-print(f"Частка позитивного класу: {df['target'].mean():.4f}")
-
-X = df.drop(columns=['class', 'target'])
-y = df['target']
-
-# 3. Стратифіковане розділення даних (80% / 20%)
+# 2. Стратифіковане розділення даних (80% / 20%)
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
 
-# 4. Препроцесинг: OrdinalEncoder для збереження монотонності
-categories_order = [
-    ['low', 'med', 'high', 'vhigh'],
-    ['low', 'med', 'high', 'vhigh'],
-    ['2', '3', '4', '5more'],
-    ['2', '4', 'more'],
-    ['small', 'med', 'big'],
-    ['low', 'med', 'high']
-]
-
-preprocessor = ColumnTransformer(
-    transformers=[
-        ('ord', OrdinalEncoder(categories=categories_order), X.columns.tolist())
-    ]
-)
-
-# 5. Побудова моделей
+# 3. Моделі в межах Pipeline
 models = {
     'Baseline': DummyClassifier(strategy='most_frequent'),
     'Logistic Regression': Pipeline([
-        ('prep', preprocessor),
         ('scaler', StandardScaler()),
         ('clf', LogisticRegression(max_iter=1000, random_state=42))
     ]),
     'GaussianNB': Pipeline([
-        ('prep', preprocessor),
+        ('scaler', StandardScaler()),
         ('clf', GaussianNB())
     ])
 }
 
-# 6. Стратифікована крос-валідація на 5 фолдах
+# 4. 5-fold Stratified Cross-Validation
 cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-scoring = ['accuracy', 'precision', 'recall', 'f1', 'roc_auc']
+scoring = {
+    'accuracy': 'accuracy',
+    'precision': make_scorer(precision_score, zero_division=0),
+    'recall': make_scorer(recall_score, zero_division=0),
+    'f1': make_scorer(f1_score, zero_division=0),
+    'roc_auc': 'roc_auc'
+}
 
-cv_results_list = []
+cv_records = []
 for name, model in models.items():
     res = cross_validate(model, X_train, y_train, cv=cv, scoring=scoring)
-    cv_results_list.append({
+    cv_records.append({
         'Model': name,
         'Accuracy': f"{res['test_accuracy'].mean():.4f} +/- {res['test_accuracy'].std():.4f}",
         'Precision': f"{res['test_precision'].mean():.4f} +/- {res['test_precision'].std():.4f}",
@@ -88,11 +82,11 @@ for name, model in models.items():
         'ROC-AUC': f"{res['test_roc_auc'].mean():.4f} +/- {res['test_roc_auc'].std():.4f}"
     })
 
-cv_df = pd.DataFrame(cv_results_list)
+cv_df = pd.DataFrame(cv_records)
 print("\n--- Результати 5-fold Stratified Cross-Validation ---")
 print(cv_df.to_string(index=False))
 
-# 7. Навчання та фінальне тестування найкращої моделі (Logistic Regression)
+# 5. Фінальне навчання Logistic Regression та тест
 best_model = models['Logistic Regression']
 best_model.fit(X_train, y_train)
 
@@ -112,22 +106,21 @@ print(f"Recall = {rec:.4f}")
 print(f"F1 = {f1:.4f}")
 print(f"ROC-AUC = {auc:.4f}")
 
-# 8. Матриця помилок
+# 6. Матриця помилок
 cm = confusion_matrix(y_test, y_pred)
 tn, fp, fn, tp = cm.ravel()
 print(f"\nConfusion Matrix: TN={tn}, FP={fp}, FN={fn}, TP={tp}")
 
-disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Unacceptable (0)', 'Acceptable (1)'])
+disp = ConfusionMatrixDisplay(confusion_matrix=cm, display_labels=['Benign (0)', 'Malignant (1)'])
 disp.plot(cmap='Blues', values_format='d')
 plt.title('Confusion matrix на test set')
 plt.tight_layout()
 plt.savefig('confusion_matrix_lr2.png')
 plt.close()
 
-# 9. Дослідження порогів класифікації (thresholds)
+# 7. Аналіз порогів прийняття рішень
 thresholds = [0.3, 0.5, 0.7]
 thresh_rows = []
-
 for t in thresholds:
     y_pred_t = (y_proba >= t).astype(int)
     cm_t = confusion_matrix(y_test, y_pred_t)
@@ -145,7 +138,6 @@ thresh_df = pd.DataFrame(thresh_rows)
 print("\n--- Вплив Decision Threshold на помилки та метрики ---")
 print(thresh_df.to_string(index=False))
 
-# Графік залежності метрик від threshold
 plt.figure(figsize=(7, 5))
 plt.plot(thresh_df['Threshold'], thresh_df['Precision'], marker='o', label='Precision')
 plt.plot(thresh_df['Threshold'], thresh_df['Recall'], marker='s', label='Recall')
@@ -159,7 +151,7 @@ plt.tight_layout()
 plt.savefig('threshold_metrics_lr2.png')
 plt.close()
 
-# 10. Побудова ROC-кривої
+# 8. Побудова ROC-кривої
 fpr, tpr, _ = roc_curve(y_test, y_proba)
 plt.figure(figsize=(6, 5))
 plt.plot(fpr, tpr, label=f"Logistic Regression (AUC = {auc:.4f})", color='steelblue', lw=2)
@@ -173,7 +165,7 @@ plt.tight_layout()
 plt.savefig('roc_curve_lr2.png')
 plt.close()
 
-# 11. Таблиця аналізу помилок (FP та FN)
+# 9. Таблиця помилок
 errors_df = X_test.copy()
 errors_df['actual'] = y_test
 errors_df['predicted'] = y_pred
@@ -185,5 +177,6 @@ errors_df['error_type'] = np.where(
 errors_df = errors_df[errors_df['error_type'] != 'None'].copy()
 errors_df['distance_to_threshold'] = (errors_df['probability'] - 0.5).abs()
 
-print("\n--- Помилково класифіковані об'єкти (перші 10) ---")
-print(errors_df[['actual', 'predicted', 'probability', 'error_type', 'distance_to_threshold'] + list(X.columns)].head(10).to_string())
+print("\n--- Помилково класифіковані об'єкти ---")
+cols_to_show = ['actual', 'predicted', 'probability', 'error_type', 'distance_to_threshold', 'mean radius', 'mean texture', 'mean concavity', 'worst radius']
+print(errors_df[cols_to_show].to_string())
