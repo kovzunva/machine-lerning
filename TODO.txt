@@ -3,3 +3,11 @@ python pr2.py
 
 cd lr2
 python lr2.py
+
+- - -
+
+cd pr3
+python pr3.py
+
+cd lr3
+python lr3.py
