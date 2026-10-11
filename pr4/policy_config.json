@@ -1,0 +1,21 @@
+{
+    "policy_id": "BREAST_CANCER_TRIAGE_POLICY",
+    "version": "1.0.0",
+    "created_date": "2026-10-11",
+    "score_semantics": "Calibrated probability of malignancy (y=1, Malignant)",
+    "threshold_binary": 0.96,
+    "threshold_low": 0.0671,
+    "threshold_high": 0.96,
+    "capacity_constraint_q_max": 0.4,
+    "cost_scenario": {
+        "c_fp": 1.0,
+        "c_fn": 8.0,
+        "unit": "clinical_risk_units"
+    },
+    "actions": {
+        "negative": "routine_screening",
+        "review": "advanced_ultrasound_review",
+        "positive": "urgent_biopsy"
+    },
+    "random_state": 42
+}
