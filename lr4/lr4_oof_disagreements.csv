@@ -1,0 +1,40 @@
+sample_idx,y_true,pred_tree,pred_rf,pred_gbdt,category,worst symmetry,worst area
+212,1,0,1,1,"Tree wrong, Both Ensembles right",0.1648,2499.0
+36,1,0,1,1,"Tree wrong, Both Ensembles right",0.3591,799.6
+105,1,0,1,1,"Tree wrong, Both Ensembles right",0.3147,827.2
+231,0,1,0,0,"Tree wrong, Both Ensembles right",0.2849,452.3
+122,1,0,1,1,"Tree wrong, Both Ensembles right",0.3222,2073.0
+44,1,1,0,1,"Tree right, Ensemble wrong",0.3693,740.7
+210,1,0,1,1,"Tree wrong, Both Ensembles right",0.2909,1656.0
+0,1,0,1,1,"Tree wrong, Both Ensembles right",0.4601,2019.0
+227,0,1,0,0,"Tree wrong, Both Ensembles right",0.2954,808.2
+297,1,0,0,0,All models wrong,0.1978,553.6
+193,1,1,0,1,"Tree right, Ensemble wrong",0.3215,768.9
+255,1,0,0,0,All models wrong,0.3068,826.0
+172,1,0,1,1,"Tree wrong, Both Ensembles right",0.3216,1102.0
+13,1,0,1,1,"Tree wrong, Both Ensembles right",0.2809,876.5
+484,0,0,1,0,"Tree right, Ensemble wrong",0.2557,854.3
+41,1,0,0,0,All models wrong,0.2964,514.0
+89,0,0,0,1,"Tree right, Ensemble wrong",0.3151,803.6
+157,0,1,1,1,All models wrong,0.2527,1032.0
+40,1,0,0,0,All models wrong,0.2994,787.9
+465,0,1,0,0,"Tree wrong, Both Ensembles right",0.2845,733.5
+126,1,0,0,1,RF vs GBDT disagree,0.347,848.7
+541,0,1,1,1,All models wrong,0.3187,808.9
+377,0,1,0,0,"Tree wrong, Both Ensembles right",0.2694,680.6
+536,1,0,0,0,All models wrong,0.2698,728.3
+248,0,1,0,0,"Tree wrong, Both Ensembles right",0.3409,455.7
+232,0,1,0,0,"Tree wrong, Both Ensembles right",0.2911,470.9
+261,1,0,1,1,"Tree wrong, Both Ensembles right",0.2452,1218.0
+133,0,0,1,0,"Tree right, Ensemble wrong",0.2723,922.8
+414,1,0,0,0,All models wrong,0.3233,931.4
+135,1,0,0,0,All models wrong,0.2829,653.6
+491,0,0,1,1,"Tree right, Ensemble wrong",0.1783,1210.0
+406,0,0,1,0,"Tree right, Ensemble wrong",0.2778,947.9
+148,0,1,0,0,"Tree wrong, Both Ensembles right",0.2691,766.9
+38,1,0,0,1,RF vs GBDT disagree,0.1565,698.8
+81,0,1,1,1,All models wrong,0.3527,614.9
+363,0,1,1,0,RF vs GBDT disagree,0.2394,1009.0
+112,0,0,1,0,"Tree right, Ensemble wrong",0.2398,709.0
+291,0,1,0,0,"Tree wrong, Both Ensembles right",0.2962,809.8
+92,0,1,0,0,"Tree wrong, Both Ensembles right",0.2027,830.6

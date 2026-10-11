@@ -1,0 +1,4 @@
+model,train_time_ms,inference_time_114_ms,model_size_kb,n_trees,n_total_nodes,local_explainability
+Tree,6.042750000005981,0.7494499998301762,4.8759765625,1,33,Прямі правила if-else / decision path
+RF,105.88204999999107,15.908950000039113,277.85546875,100,3144,Permutation Importance / SHAP / PDP
+GBDT,185.90809999977864,1.006850000067061,126.412109375,100,1322,Permutation Importance / SHAP / PDP

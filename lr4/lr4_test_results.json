@@ -1,0 +1,12 @@
+{
+  "test_macro_f1": 0.9712773998488284,
+  "test_accuracy": 0.9736842105263158,
+  "test_macro_precision": 0.98,
+  "test_macro_recall": 0.9642857142857143,
+  "confusion_matrix": {
+    "TN": 72,
+    "FP": 0,
+    "FN": 3,
+    "TP": 39
+  }
+}
