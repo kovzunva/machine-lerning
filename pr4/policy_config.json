@@ -1,11 +1,11 @@
 {
     "policy_id": "BREAST_CANCER_TRIAGE_POLICY",
-    "version": "1.0.0",
-    "created_date": "2026-10-11",
-    "score_semantics": "Calibrated probability of malignancy (y=1, Malignant)",
-    "threshold_binary": 0.96,
-    "threshold_low": 0.35,
-    "threshold_high": 0.96,
+    "version": "1.2.0",
+    "created_date": "2026-10-18",
+    "score_semantics": "Probability of malignancy P(y=1, Malignant | x)",
+    "threshold_binary": 0.2,
+    "threshold_low": 0.2,
+    "threshold_high": 0.7,
     "capacity_constraint_q_max": 0.4,
     "cost_scenario": {
         "c_fp": 1.0,
@@ -17,5 +17,11 @@
         "review": "advanced_ultrasound_review",
         "positive": "urgent_biopsy"
     },
-    "random_state": 42
+    "provenance": {
+        "dataset": "Breast Cancer Wisconsin Diagnostic (1=Malignant, 0=Benign)",
+        "train_samples": 455,
+        "validation_method": "5-fold Stratified KFold OOF",
+        "random_state": 42,
+        "model": "StandardScaler + LogisticRegression(C=1.0)"
+    }
 }
