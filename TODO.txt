@@ -4,3 +4,6 @@ python -m unittest -v test_pr6.py
 
 cd lr6
 python lr6.py
+python -m unittest -v test_lr6.py
+
+- - - - - 

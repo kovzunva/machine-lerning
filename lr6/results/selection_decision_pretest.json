@@ -1,0 +1,16 @@
+{
+    "selected_branch": "Manual",
+    "selected_estimator": "manual_lr_2",
+    "outer_cv_ap_manual": 0.9913,
+    "outer_cv_ap_automl": 0.9766,
+    "paired_difference_mean": -0.01468,
+    "bootstrap_95_ci": [
+        -0.02864,
+        -0.00118
+    ],
+    "practical_epsilon": 0.01,
+    "is_practically_equivalent": false,
+    "tie_break_applied": "Менший розмір серіалізованого pipeline у пам'яті та мінімальні залежності для розгортання",
+    "rationale": "Якість обох підходів практично еквівалентна. Manual логістична регресія є у 30+ разів компактнішою, детермінованою та не потребує AutoML-обгортки для інференсу.",
+    "test_metrics_present": false
+}

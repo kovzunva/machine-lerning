@@ -1,0 +1,4 @@
+seed,manual_best,manual_inner_ap,automl_best,automl_inner_ap
+11,manual_lr_3,0.9931,lrl2,0.981
+42,manual_lr_3,0.9898,lrl2,0.9774
+77,manual_lr_1,0.9888,lrl2,0.9796
