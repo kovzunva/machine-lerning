@@ -1,0 +1,15 @@
+{
+  "random_state": 42,
+  "test_size": 0.30,
+  "pca_q": 22,
+  "k_clusters": 9,
+  "clustering_seeds": [11, 23, 42, 67, 101],
+  "boundary_margin_threshold": 0.05,
+  "object_stability_threshold": 0.80,
+  "top_features_k": 5,
+  "action_policy": {
+    "manual_review_threshold": 0.99,
+    "data_quality_threshold": 0.95,
+    "uncertain_stability_threshold": 0.80
+  }
+}

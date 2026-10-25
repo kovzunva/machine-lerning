@@ -1,0 +1,255 @@
+[
+    {
+        "object_id": 0,
+        "assigned_cluster": 7,
+        "boundary_margin": 0.0268,
+        "is_controlled_anomaly": 1,
+        "scores": {
+            "percentile_if_pca": 0.9968,
+            "percentile_reconstruction": 1.0,
+            "percentile_combined": 1.0
+        },
+        "triggered_rules": [
+            "p_comb (1.0000) >= 0.99",
+            "p_rec (1.0000) >= 0.95"
+        ],
+        "action": "manual_review",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 2,
+        "assigned_cluster": 2,
+        "boundary_margin": 0.0317,
+        "is_controlled_anomaly": 1,
+        "scores": {
+            "percentile_if_pca": 0.996,
+            "percentile_reconstruction": 1.0,
+            "percentile_combined": 1.0
+        },
+        "triggered_rules": [
+            "p_comb (1.0000) >= 0.99",
+            "p_rec (1.0000) >= 0.95"
+        ],
+        "action": "manual_review",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 6,
+        "assigned_cluster": 0,
+        "boundary_margin": 0.0907,
+        "is_controlled_anomaly": 1,
+        "scores": {
+            "percentile_if_pca": 0.9992,
+            "percentile_reconstruction": 1.0,
+            "percentile_combined": 1.0
+        },
+        "triggered_rules": [
+            "p_comb (1.0000) >= 0.99",
+            "p_rec (1.0000) >= 0.95"
+        ],
+        "action": "manual_review",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 9,
+        "assigned_cluster": 6,
+        "boundary_margin": 0.034,
+        "is_controlled_anomaly": 1,
+        "scores": {
+            "percentile_if_pca": 0.9992,
+            "percentile_reconstruction": 1.0,
+            "percentile_combined": 1.0
+        },
+        "triggered_rules": [
+            "p_comb (1.0000) >= 0.99",
+            "p_rec (1.0000) >= 0.95"
+        ],
+        "action": "manual_review",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 10,
+        "assigned_cluster": 4,
+        "boundary_margin": 0.1799,
+        "is_controlled_anomaly": 1,
+        "scores": {
+            "percentile_if_pca": 0.9809,
+            "percentile_reconstruction": 1.0,
+            "percentile_combined": 1.0
+        },
+        "triggered_rules": [
+            "p_comb (1.0000) >= 0.99",
+            "p_rec (1.0000) >= 0.95"
+        ],
+        "action": "manual_review",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 123,
+        "assigned_cluster": 2,
+        "boundary_margin": 0.1678,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.9276,
+            "percentile_reconstruction": 0.0398,
+            "percentile_combined": 0.9276
+        },
+        "triggered_rules": [],
+        "action": "no_action",
+        "hypothesis": "Незвичне поєднання координат у підпросторі",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 98,
+        "assigned_cluster": 4,
+        "boundary_margin": 0.361,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.0947,
+            "percentile_reconstruction": 0.9539,
+            "percentile_combined": 0.9539
+        },
+        "triggered_rules": [
+            "p_rec (0.9539) >= 0.95"
+        ],
+        "action": "data_quality_check",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 493,
+        "assigned_cluster": 7,
+        "boundary_margin": 0.0607,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.0453,
+            "percentile_reconstruction": 0.8958,
+            "percentile_combined": 0.8958
+        },
+        "triggered_rules": [],
+        "action": "no_action",
+        "hypothesis": "Незвичне поєднання координат у підпросторі",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 317,
+        "assigned_cluster": 6,
+        "boundary_margin": 0.3693,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.8727,
+            "percentile_reconstruction": 0.0883,
+            "percentile_combined": 0.8727
+        },
+        "triggered_rules": [],
+        "action": "no_action",
+        "hypothesis": "Незвичне поєднання координат у підпросторі",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 292,
+        "assigned_cluster": 3,
+        "boundary_margin": 0.2317,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.1329,
+            "percentile_reconstruction": 0.9149,
+            "percentile_combined": 0.9149
+        },
+        "triggered_rules": [],
+        "action": "no_action",
+        "hypothesis": "Незвичне поєднання координат у підпросторі",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 14,
+        "assigned_cluster": 0,
+        "boundary_margin": 0.3707,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.8982,
+            "percentile_reconstruction": 0.9698,
+            "percentile_combined": 0.9698
+        },
+        "triggered_rules": [
+            "p_rec (0.9698) >= 0.95"
+        ],
+        "action": "data_quality_check",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 16,
+        "assigned_cluster": 4,
+        "boundary_margin": 0.2064,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.4264,
+            "percentile_reconstruction": 0.9578,
+            "percentile_combined": 0.9578
+        },
+        "triggered_rules": [
+            "p_rec (0.9578) >= 0.95"
+        ],
+        "action": "data_quality_check",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 37,
+        "assigned_cluster": 8,
+        "boundary_margin": 0.0873,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.9785,
+            "percentile_reconstruction": 0.9984,
+            "percentile_combined": 0.9984
+        },
+        "triggered_rules": [
+            "p_comb (0.9984) >= 0.99",
+            "p_rec (0.9984) >= 0.95"
+        ],
+        "action": "manual_review",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 53,
+        "assigned_cluster": 7,
+        "boundary_margin": 0.3567,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.786,
+            "percentile_reconstruction": 0.9793,
+            "percentile_combined": 0.9793
+        },
+        "triggered_rules": [
+            "p_rec (0.9793) >= 0.95"
+        ],
+        "action": "data_quality_check",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    },
+    {
+        "object_id": 60,
+        "assigned_cluster": 8,
+        "boundary_margin": 0.1609,
+        "is_controlled_anomaly": 0,
+        "scores": {
+            "percentile_if_pca": 0.9101,
+            "percentile_reconstruction": 0.965,
+            "percentile_combined": 0.965
+        },
+        "triggered_rules": [
+            "p_rec (0.9650) >= 0.95"
+        ],
+        "action": "data_quality_check",
+        "hypothesis": "Високочастотне спотворення структури пікселів",
+        "limitation": "Оцінка виконана без контексту мітки класу; вимагає візуальної верифікації"
+    }
+]

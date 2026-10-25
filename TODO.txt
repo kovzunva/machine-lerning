@@ -1,7 +1,6 @@
-cd pr5
-python pr5.py
-python -m unittest -v test_selector.py
+cd pr6
+python pr6.py
+python -m unittest -v test_pr6.py
 
-cd lr5
-python lr5.py
-python -m unittest -v test_lr5.py
+cd lr6
+python lr6.py
