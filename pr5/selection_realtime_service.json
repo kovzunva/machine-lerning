@@ -1,0 +1,33 @@
+{
+    "scenario": "realtime_service",
+    "version": "1.0.0",
+    "execution_date": "2026-10-25 11:00:32",
+    "primary_model": "LogisticRegression",
+    "backup_model": "GradientBoosting",
+    "primary_score": 0.8538,
+    "eligible_count": 3,
+    "rejected_count": 1,
+    "rejected_details": [
+        {
+            "model_name": "RandomForest",
+            "violations": "model_size_mb: 0.0556 > max 0.05"
+        }
+    ],
+    "ranking": [
+        {
+            "rank": 1,
+            "model_name": "LogisticRegression",
+            "score": 0.8538
+        },
+        {
+            "rank": 2,
+            "model_name": "GradientBoosting",
+            "score": 0.7709
+        },
+        {
+            "rank": 3,
+            "model_name": "DecisionTree",
+            "score": 0.5544
+        }
+    ]
+}

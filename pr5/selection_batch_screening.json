@@ -1,0 +1,33 @@
+{
+    "scenario": "batch_screening",
+    "version": "1.0.0",
+    "execution_date": "2026-10-25 11:00:32",
+    "primary_model": "LogisticRegression",
+    "backup_model": "GradientBoosting",
+    "primary_score": 0.7883,
+    "eligible_count": 3,
+    "rejected_count": 1,
+    "rejected_details": [
+        {
+            "model_name": "DecisionTree",
+            "violations": "cv_recall_mean: 0.8706 < min 0.9; cv_f1_mean: 0.8963 < min 0.9"
+        }
+    ],
+    "ranking": [
+        {
+            "rank": 1,
+            "model_name": "LogisticRegression",
+            "score": 0.7883
+        },
+        {
+            "rank": 2,
+            "model_name": "GradientBoosting",
+            "score": 0.7631
+        },
+        {
+            "rank": 3,
+            "model_name": "RandomForest",
+            "score": 0.6499
+        }
+    ]
+}

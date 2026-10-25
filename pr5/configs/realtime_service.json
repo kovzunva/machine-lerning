@@ -1,0 +1,41 @@
+{
+  "scenario": "realtime_service",
+  "description": "Портативний діагностичний термінал реального часу (жорсткі обмеження пам'яті та затримки p95)",
+  "constraints": {
+    "cv_recall_mean": {"min": 0.85},
+    "latency_p95_ms": {"max": 4.0},
+    "model_size_mb": {"max": 0.05}
+  },
+  "criteria": {
+    "cv_f1_mean": {
+      "direction": "maximize",
+      "weight": 0.30,
+      "worst": 0.85,
+      "best": 0.98
+    },
+    "cv_recall_mean": {
+      "direction": "maximize",
+      "weight": 0.25,
+      "worst": 0.85,
+      "best": 0.99
+    },
+    "latency_p95_ms": {
+      "direction": "minimize",
+      "weight": 0.25,
+      "worst": 4.0,
+      "best": 0.2
+    },
+    "model_size_mb": {
+      "direction": "minimize",
+      "weight": 0.15,
+      "worst": 0.05,
+      "best": 0.001
+    },
+    "cv_f1_std": {
+      "direction": "minimize",
+      "weight": 0.05,
+      "worst": 0.05,
+      "best": 0.005
+    }
+  }
+}

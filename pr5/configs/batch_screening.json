@@ -1,0 +1,42 @@
+{
+  "scenario": "batch_screening",
+  "description": "Централізований серверний пакетний скринінг із пріоритетом повноти діагностики та ROC-AUC",
+  "constraints": {
+    "cv_recall_mean": {"min": 0.90},
+    "cv_f1_mean": {"min": 0.90},
+    "latency_p95_ms": {"max": 50.0},
+    "model_size_mb": {"max": 2.0}
+  },
+  "criteria": {
+    "cv_roc_auc_mean": {
+      "direction": "maximize",
+      "weight": 0.40,
+      "worst": 0.90,
+      "best": 0.999
+    },
+    "cv_recall_mean": {
+      "direction": "maximize",
+      "weight": 0.30,
+      "worst": 0.90,
+      "best": 0.995
+    },
+    "cv_f1_mean": {
+      "direction": "maximize",
+      "weight": 0.20,
+      "worst": 0.90,
+      "best": 0.98
+    },
+    "cv_f1_std": {
+      "direction": "minimize",
+      "weight": 0.05,
+      "worst": 0.04,
+      "best": 0.005
+    },
+    "fit_time_ms": {
+      "direction": "minimize",
+      "weight": 0.05,
+      "worst": 300.0,
+      "best": 5.0
+    }
+  }
+}

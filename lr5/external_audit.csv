@@ -1,0 +1,4 @@
+space,ari,nmi,homogeneity,completeness
+64 ознаки (train),0.5636,0.708,0.679,0.7396
+PCA 22 (train),0.583,0.7145,0.686,0.7455
+PCA 22 (test),0.5861,0.7166,0.6884,0.7473

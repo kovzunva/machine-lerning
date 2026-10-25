@@ -1,0 +1,5 @@
+model_name,cv_f1_mean,cv_f1_std,cv_recall_mean,cv_roc_auc_mean,cv_balanced_acc_mean,fit_time_ms,latency_p50_ms,latency_p95_ms,throughput_samples_s,model_size_mb
+LogisticRegression,0.964,0.0231,0.9529,0.9958,0.9695,4.8,0.35,0.498,182596.3,0.00207
+DecisionTree,0.8963,0.0354,0.8706,0.9356,0.9142,4.52,0.237,0.245,269587.2,0.00183
+RandomForest,0.9493,0.0361,0.9412,0.9884,0.9583,100.49,3.697,3.807,17311.8,0.0556
+GradientBoosting,0.9644,0.0173,0.9588,0.9911,0.9706,206.21,0.387,0.424,165332.0,0.03661

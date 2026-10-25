@@ -1,21 +1,7 @@
-cd pr2
-python pr2.py
+cd pr5
+python pr5.py
+python -m unittest -v test_selector.py
 
-cd lr2
-python lr2.py
-
-- - -
-
-cd pr3
-python pr3.py
-
-cd lr3
-python lr3.py
-
-- - -
-
-cd pr4
-python pr4.py
-
-cd lr4
-python lr4.py
+cd lr5
+python lr5.py
+python -m unittest -v test_lr5.py

@@ -1,0 +1,2 @@
+model_name,violations
+DecisionTree,cv_recall_mean: 0.8706 < min 0.9; cv_f1_mean: 0.8963 < min 0.9

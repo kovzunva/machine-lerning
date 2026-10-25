@@ -1,0 +1,15 @@
+{
+  "random_state": 42,
+  "test_size": 0.30,
+  "pca_variance_threshold": 0.90,
+  "k_range": [6, 7, 8, 9, 10, 11, 12, 13, 14],
+  "clustering_seeds": [11, 23, 42, 67, 101],
+  "anomaly_fraction": 0.18,
+  "anomaly_threshold_quantile": 0.95,
+  "isolation_forest": {
+    "n_estimators": 150,
+    "max_samples": "auto",
+    "contamination": "auto",
+    "random_state": 42
+  }
+}

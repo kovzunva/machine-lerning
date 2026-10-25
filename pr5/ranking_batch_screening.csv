@@ -1,0 +1,4 @@
+model_name,cv_f1_mean,cv_f1_std,cv_recall_mean,cv_roc_auc_mean,cv_balanced_acc_mean,fit_time_ms,latency_p50_ms,latency_p95_ms,throughput_samples_s,model_size_mb,norm_cv_roc_auc_mean,norm_cv_recall_mean,norm_cv_f1_mean,norm_cv_f1_std,norm_fit_time_ms,score,rank
+LogisticRegression,0.964,0.0231,0.9529,0.9958,0.9695,4.8,0.35,0.498,182596.3,0.00207,0.9677,0.5568,0.8,0.4829,1.0,0.7883,1
+GradientBoosting,0.9644,0.0173,0.9588,0.9911,0.9706,206.21,0.387,0.424,165332.0,0.03661,0.9202,0.6189,0.805,0.6486,0.3179,0.7631,2
+RandomForest,0.9493,0.0361,0.9412,0.9884,0.9583,100.49,3.697,3.807,17311.8,0.0556,0.8929,0.4337,0.6163,0.1114,0.6763,0.6499,3
