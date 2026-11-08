@@ -1,9 +1,8 @@
-cd pr6
-python pr6.py
-python -m unittest -v test_pr6.py
+cd pr7
+python pr7.py
+python -m unittest -v test_audit_core.py
 
-cd lr6
-python lr6.py
-python -m unittest -v test_lr6.py
+cd lr7
+python lr7.py
 
 - - - - - 

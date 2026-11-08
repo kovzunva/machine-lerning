@@ -1,0 +1,20 @@
+{
+  "dataset": "load_breast_cancer",
+  "test_size": 143,
+  "train_size": 426,
+  "random_state": 42,
+  "n_outer_folds": 5,
+  "n_cv_repeats": 3,
+  "n_bootstrap_runs": 12,
+  "bootstrap_fraction": 0.9,
+  "candidate_C": [0.01, 0.1, 1.0, 10.0, 100.0],
+  "features_subset": [
+    "mean radius",
+    "mean texture",
+    "mean compactness",
+    "mean smoothness",
+    "mean symmetry",
+    "mean fractal dimension"
+  ],
+  "leakage_proxy_col": "diagnosis_code_after_examination"
+}

@@ -1,0 +1,8 @@
+Сценарій,Результат,Пояснення
+Коректний запис,accepted,Контракт виконано
+Інший порядок полів,accepted,Контракт виконано
+Відсутня ознака,rejected,Missing required feature: mean radius
+Зайва ознака,rejected,Unexpected feature: unexpected_feature
+Текст замість числа,rejected,Field mean texture has non-numeric type: <class 'str'>
+NaN значення,rejected,Field mean smoothness has NaN or Inf value
+Поза train range (10x Max),accepted_with_warning,"Value for mean radius (281.1) is outside train bounds [6.98, 28.11]"

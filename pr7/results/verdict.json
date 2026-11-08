@@ -1,0 +1,8 @@
+{
+  "verdict": "Потребує доопрацювання",
+  "justification": "Початковий AP=1.0 зумовлений target leakage та вибором C за test set. Виправлений Pipeline є відтворюваним і перевершує baseline, але рішення має лише навчальне призначення.",
+  "claims_total": 6,
+  "claims_refuted": 4,
+  "findings_critical": 2,
+  "fixed_pipeline_test_ap": 0.9735513589476543
+}
