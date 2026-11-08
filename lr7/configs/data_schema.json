@@ -1,0 +1,216 @@
+{
+  "version": "1.0.0",
+  "description": "Схема 30 числових ознак Breast Cancer Wisconsin",
+  "features": [
+    {
+      "name": "mean radius",
+      "type": "float64",
+      "min": 6.981,
+      "max": 28.11,
+      "mean": 14.167697183098593
+    },
+    {
+      "name": "mean texture",
+      "type": "float64",
+      "min": 9.71,
+      "max": 39.28,
+      "mean": 19.39967136150235
+    },
+    {
+      "name": "mean perimeter",
+      "type": "float64",
+      "min": 43.79,
+      "max": 188.5,
+      "mean": 92.19286384976526
+    },
+    {
+      "name": "mean area",
+      "type": "float64",
+      "min": 143.5,
+      "max": 2501.0,
+      "mean": 660.0760563380281
+    },
+    {
+      "name": "mean smoothness",
+      "type": "float64",
+      "min": 0.06251,
+      "max": 0.1634,
+      "mean": 0.09599744131455398
+    },
+    {
+      "name": "mean compactness",
+      "type": "float64",
+      "min": 0.01938,
+      "max": 0.3454,
+      "mean": 0.10296199530516431
+    },
+    {
+      "name": "mean concavity",
+      "type": "float64",
+      "min": 0.0,
+      "max": 0.4268,
+      "mean": 0.08876505093896715
+    },
+    {
+      "name": "mean concave points",
+      "type": "float64",
+      "min": 0.0,
+      "max": 0.2012,
+      "mean": 0.048933847417840376
+    },
+    {
+      "name": "mean symmetry",
+      "type": "float64",
+      "min": 0.106,
+      "max": 0.304,
+      "mean": 0.18137723004694836
+    },
+    {
+      "name": "mean fractal dimension",
+      "type": "float64",
+      "min": 0.05024,
+      "max": 0.09744,
+      "mean": 0.06262802816901408
+    },
+    {
+      "name": "radius error",
+      "type": "float64",
+      "min": 0.1115,
+      "max": 2.873,
+      "mean": 0.4116300469483568
+    },
+    {
+      "name": "texture error",
+      "type": "float64",
+      "min": 0.3602,
+      "max": 4.885,
+      "mean": 1.2067420187793427
+    },
+    {
+      "name": "perimeter error",
+      "type": "float64",
+      "min": 0.757,
+      "max": 21.98,
+      "mean": 2.901583098591549
+    },
+    {
+      "name": "area error",
+      "type": "float64",
+      "min": 6.802,
+      "max": 542.2,
+      "mean": 41.42400234741784
+    },
+    {
+      "name": "smoothness error",
+      "type": "float64",
+      "min": 0.001713,
+      "max": 0.03113,
+      "mean": 0.006905955399061033
+    },
+    {
+      "name": "compactness error",
+      "type": "float64",
+      "min": 0.002252,
+      "max": 0.1064,
+      "mean": 0.025030077464788733
+    },
+    {
+      "name": "concavity error",
+      "type": "float64",
+      "min": 0.0,
+      "max": 0.396,
+      "mean": 0.031991003755868545
+    },
+    {
+      "name": "concave points error",
+      "type": "float64",
+      "min": 0.0,
+      "max": 0.05279,
+      "mean": 0.011621199530516433
+    },
+    {
+      "name": "symmetry error",
+      "type": "float64",
+      "min": 0.007882,
+      "max": 0.07895,
+      "mean": 0.02030919718309859
+    },
+    {
+      "name": "fractal dimension error",
+      "type": "float64",
+      "min": 0.0008948,
+      "max": 0.02984,
+      "mean": 0.003746991314553991
+    },
+    {
+      "name": "worst radius",
+      "type": "float64",
+      "min": 7.93,
+      "max": 36.04,
+      "mean": 16.36611267605634
+    },
+    {
+      "name": "worst texture",
+      "type": "float64",
+      "min": 12.02,
+      "max": 49.54,
+      "mean": 25.84443661971831
+    },
+    {
+      "name": "worst perimeter",
+      "type": "float64",
+      "min": 50.41,
+      "max": 251.2,
+      "mean": 107.90049295774648
+    },
+    {
+      "name": "worst area",
+      "type": "float64",
+      "min": 185.2,
+      "max": 4254.0,
+      "mean": 892.9528169014085
+    },
+    {
+      "name": "worst smoothness",
+      "type": "float64",
+      "min": 0.07117,
+      "max": 0.2226,
+      "mean": 0.13223962441314555
+    },
+    {
+      "name": "worst compactness",
+      "type": "float64",
+      "min": 0.02729,
+      "max": 1.058,
+      "mean": 0.2526154694835681
+    },
+    {
+      "name": "worst concavity",
+      "type": "float64",
+      "min": 0.0,
+      "max": 1.252,
+      "mean": 0.2738232676056338
+    },
+    {
+      "name": "worst concave points",
+      "type": "float64",
+      "min": 0.0,
+      "max": 0.291,
+      "mean": 0.11527882863849767
+    },
+    {
+      "name": "worst symmetry",
+      "type": "float64",
+      "min": 0.1565,
+      "max": 0.6638,
+      "mean": 0.29076267605633804
+    },
+    {
+      "name": "worst fractal dimension",
+      "type": "float64",
+      "min": 0.05504,
+      "max": 0.2075,
+      "mean": 0.08386434272300468
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "manifest_version": "1.0.0",
+  "files": {
+    "configs/project_config.json": "25497bd0cf34b84bd3042e93f6b9a231920bc07e7074b9896e32fd47dba7ecb9",
+    "configs/data_schema.json": "888a291231e78ae7f566e0e4a2126567276a116c5add2ee4e9a765b1eed81036",
+    "configs/inference_example.json": "bbf746d0f72c53daed115ababa36574c924f5cf0869499bde3187d0dc835e7da",
+    "data/train_ids.csv": "151231cf5cbef6f513bce1a2839260d05a2315e2d4e436def3479b8de73f481b",
+    "data/test_ids.csv": "7930f776a8cd2cbc8976eb8c819938a06ae06767c09a924d895241fa23ec6693",
+    "models/selected_pipeline.joblib": "e5df1cb0b068a5d405b75fe7931a260a55cebd967460796c515d204fc5927dd3",
+    "models/model_metadata.json": "4843826d2066a67a441fa2ef17656db5bb05ca74b5bf5186e528cc4ba528fe48",
+    "src/ml_project/config.py": "554c97a07c7591e1707838cb6e790cfd434a6eb86a6a6775f2e9f6c5c45e175c",
+    "src/ml_project/validation.py": "81881802a8714e17e67bce73c584925f90b889215887086694b28fcb50e09451",
+    "src/ml_project/predictor.py": "9597890275fd8a5be0be092bac80edc634a98dd047f257cb653c3272024de8bc",
+    "src/ml_project/train.py": "bca0c5a5d58c5d4919e3d8c06c9c2c744f9810ae7da3525449a45e632b2a7d3b",
+    "src/ml_project/cli.py": "982d2505eea8445889f09e7e6b1ddf1fbf9f858436ccacff1b18e7f5899dbfd7"
+  }
+}

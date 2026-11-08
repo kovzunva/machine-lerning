@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml_project"
+version = "1.0.0"
+description = "Відтворюване ядро інференсу для діагностики Breast Cancer (ХНУ, ІПЗ, 2026)"
+authors = [{ name = "Viktoriia Kovzun" }]
+dependencies = [
+    "numpy>=1.23.0",
+    "pandas>=1.5.0",
+    "scikit-learn>=1.2.0",
+    "joblib>=1.2.0"
+]

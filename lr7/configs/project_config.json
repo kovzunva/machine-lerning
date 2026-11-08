@@ -1,0 +1,13 @@
+{
+  "project_name": "breast_cancer_reproducible_core",
+  "version": "1.0.0",
+  "model_path": "models/selected_pipeline.joblib",
+  "schema_path": "configs/data_schema.json",
+  "metadata_path": "models/model_metadata.json",
+  "train_ids_path": "data/train_ids.csv",
+  "test_ids_path": "data/test_ids.csv",
+  "threshold": 0.5,
+  "positive_class_label": "malignant",
+  "max_batch_size": 200,
+  "numeric_tolerance": 1e-12
+}

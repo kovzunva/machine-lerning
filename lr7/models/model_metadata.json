@@ -1,0 +1,20 @@
+{
+  "project_name": "breast_cancer_reproducible_core",
+  "version": "1.0.0",
+  "model_file": "selected_pipeline.joblib",
+  "model_sha256": "e5df1cb0b068a5d405b75fe7931a260a55cebd967460796c515d204fc5927dd3",
+  "schema_version": "1.0.0",
+  "family": "LogisticRegression",
+  "hyperparameters": {
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 1000
+  },
+  "expected_inference_prob": 0.999388442780177,
+  "test_metrics": {
+    "average_precision": 0.9943,
+    "roc_auc": 0.9962,
+    "f1_score": 0.9515
+  },
+  "intended_use": "Демонстратор надійного відтворюваного ML-компонента для курсу 'Основи ML'"
+}

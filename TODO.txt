@@ -4,5 +4,6 @@ python -m unittest -v test_audit_core.py
 
 cd lr7
 python lr7.py
+python -m unittest discover -s tests -v
 
 - - - - - 
