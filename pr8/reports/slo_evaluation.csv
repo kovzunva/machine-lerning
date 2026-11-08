@@ -1,0 +1,6 @@
+Показник,Межа,Факт,Результат
+Success rate,>= 0.99,1.00,pass
+Single p95,< 100 мс,6.39 мс,pass
+Batch-50 p95,< 500 мс,71.01 мс,pass
+Unexpected HTTP 500,= 0,0,pass
+Golden failures,= 0,0,pass

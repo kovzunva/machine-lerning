@@ -1,9 +1,9 @@
-cd pr7
-python pr7.py
-python -m unittest -v test_audit_core.py
+cd pr8
+python pr8.py
+python -m unittest discover -s tests -v
 
-cd lr7
-python lr7.py
+cd lr8
+python lr8.py
 python -m unittest discover -s tests -v
 
 - - - - - 

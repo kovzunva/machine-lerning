@@ -1,0 +1,5 @@
+{
+  "model_sha256": "e5df1cb0b068a5d405b75fe7931a260a55cebd967460796c515d204fc5927dd3",
+  "family": "LogisticRegression",
+  "service_version": "1.0.0"
+}

@@ -1,0 +1,7 @@
+{
+  "target_success_rate": 0.99,
+  "max_single_p95_ms": 100.0,
+  "max_batch_50_p95_ms": 500.0,
+  "max_unexpected_500": 0,
+  "max_golden_failures": 0
+}

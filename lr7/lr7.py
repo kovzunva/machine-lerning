@@ -143,9 +143,9 @@ def run_pipeline():
     rebuilt_model_path = rebuild_model(output_model_path="models/rebuilt_pipeline.joblib")
     rebuilt_pipe = joblib.load(rebuilt_model_path)
     
-    # Отримуємо вектор через валідатор схеми
-    vec, _ = predictor.validator.validate_record(sample_input)
-    rebuilt_prob = float(rebuilt_pipe.predict_proba(vec.reshape(1, -1))[0, 1])
+    # Отримуємо вектор через валідатор схеми (повертає DataFrame розмірності (1, 30))
+    df_sample, _ = predictor.validator.validate_record(sample_input)
+    rebuilt_prob = float(rebuilt_pipe.predict_proba(df_sample)[0, 1])
 
     delta_p = abs(current_prob - rebuilt_prob)
     print(f"     Ймовірність переданої моделі: {passed_prob:.12f}")
@@ -157,16 +157,31 @@ def run_pipeline():
     print("     [SUCCESS] Числова тотожність контрольного прогнозу доведена!")
 
     # Рисунок 4: Контроль відтворюваності
-    plt.figure(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(8, 4.5))
     categories = ["Переданий", "Відтворений", "Очікуваний"]
     values = [passed_prob, rebuilt_prob, passed_prob]
-    bars = plt.bar(categories, values, color=["#2b5c8f", "#d97706", "#2d8a4e"], width=0.55)
-    plt.ylabel("Ймовірність позитивного класу")
-    plt.title("Контроль відтворюваності inference-прикладу")
-    plt.ylim(passed_prob - 0.02, 1.0)
+    bars = ax.bar(categories, values, color=["#2b5c8f", "#d97706", "#2d8a4e"], width=0.5)
+    
+    ax.set_ylabel("Ймовірність позитивного класу")
+    ax.set_title("Контроль відтворюваності inference-прикладу", pad=20, fontsize=11, fontweight="bold")
+    
+    # Запас по Y зверху, щоб довгі підписи не перекривали заголовок
+    y_min = passed_prob - 0.02
+    y_max = passed_prob + 0.006
+    ax.set_ylim(y_min, y_max)
+    
     for bar in bars:
         yval = bar.get_height()
-        plt.text(bar.get_x() + bar.get_width()/2, yval + 0.001, f"{yval:.12f}", ha='center', fontsize=8)
+        ax.text(
+            bar.get_x() + bar.get_width() / 2,
+            yval + 0.0008,
+            f"{yval:.12f}",
+            ha="center",
+            va="bottom",
+            fontsize=8.5,
+            fontweight="semibold"
+        )
+        
     plt.tight_layout()
     plt.savefig("reports/figures/fig4_inference_reproducibility.png", dpi=300)
     plt.close()

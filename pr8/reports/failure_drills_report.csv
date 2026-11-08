@@ -1,0 +1,6 @@
+drill,injection,expected,actual,status
+missing model,Вилучення файлу моделі,"health 200, ready 503","health 200, ready 503",виконано
+checksum mismatch,Модифікація SHA-256 у метаданих,"health 200, ready 503","health 200, ready 503",виконано
+oversized batch,Запит із 101 елементом при ліміті 100,HTTP 422 BATCH_SIZE_EXCEEDED,HTTP 422,виконано
+artificial delay,Штучна пауза інференсу 150 мс,"HTTP 200, latency > 100 мс","HTTP 200, 153.6 мс",виконано
+predictor exception,Внутрішній збій обчислення,"HTTP 500, INTERNAL_ERROR, request ID",HTTP 500,виконано

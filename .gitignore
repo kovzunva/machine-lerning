@@ -1,2 +1,5 @@
 docs/*
 .agents/*
+
+pr8/venv
+pr8/venv/*

@@ -1,0 +1,12 @@
+{
+  "service_name": "breast_cancer_diagnostic_service",
+  "service_version": "1.0.0",
+  "api_version": "v1",
+  "model_path": "models/selected_pipeline.joblib",
+  "metadata_path": "models/model_metadata.json",
+  "schema_path": "configs/data_schema.json",
+  "threshold": 0.5,
+  "positive_class": "malignant",
+  "max_batch_size": 100,
+  "numeric_tolerance": 1e-12
+}
